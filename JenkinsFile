@@ -14,17 +14,15 @@ node {
     deleteDir()
     withGolang {
       sh """
-      ls .
         go get github.com/venicegeo/dg-pz-gocommon/gocommon
-        ls -R ./gopath/src/github.com
+
         go get github.com/braintree/manners
         go get github.com/gin-gonic/gin
         go get github.com/stretchr/testify/assert
         go get gopkg.in/olivere/elastic.v3
         go get github.com/Shopify/sarama
-        cd \$GOPATH/src/github.com/venicegeo/dg-pz-gocommon
 
-        head -30 elasticsearch/common.go
+        cd \$GOPATH/src/github.com/venicegeo/dg-pz-gocommon
 
         for i in gocommon elasticsearch kafka syslog
         do
@@ -35,9 +33,7 @@ node {
 
         cd ${root}
 
-        tar -cvzf pz-gocommon.tgz \
-            glide.lock \
-            glide.yaml
+        tar -cvzf pz-gocommon.tgz .
       """
     }
     mavenPush()
