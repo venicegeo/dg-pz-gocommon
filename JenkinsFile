@@ -13,7 +13,7 @@ node {
   stage('Archive') {
     withGolang {
       sh """
-        go get github.com/venicegeo/dg-pz-gocommon
+        go get github.com/venicegeo/dg-pz-gocommon/gocommon
         go get github.com/braintree/manners
         go get github.com/gin-gonic/gin
         cd \$GOPATH/src/github.com/venicegeo/dg-pz-gocommon
