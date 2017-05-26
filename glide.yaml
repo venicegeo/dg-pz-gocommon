@@ -1,4 +1,4 @@
-package: github.com/venicegeo/pz-gocommon
+package: github.com/venicegeo/dg-pz-gocommon
 import:
 - package: github.com/Shopify/sarama
   version: 0fb560e5f7fbcaee2f75e3c34174320709f69944
