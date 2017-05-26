@@ -33,7 +33,8 @@ node {
 
         cd ${root}
 
-        tar -cvzf pz-gocommon.tgz .
+        tar -cvzf pz-gocommon.tgz \
+          \$GOPATH/src/github.com/venicegeo/dg-pz-gocommon
       """
     }
     mavenPush()
