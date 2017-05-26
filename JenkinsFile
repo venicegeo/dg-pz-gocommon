@@ -11,6 +11,7 @@ node {
   }
 
   stage('Archive') {
+    deleteDir()
     withGolang {
       sh """
       ls -R ./gopath/src/github.com
