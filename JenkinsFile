@@ -13,9 +13,9 @@ node {
   stage('Archive') {
     withGolang {
       sh """
-      ls -R
+      ls -R ./gopath/src/github.com
         go get github.com/venicegeo/dg-pz-gocommon/gocommon
-        ls -R
+        ls -R ./gopath/src/github.com
         go get github.com/braintree/manners
         go get github.com/gin-gonic/gin
         go get github.com/stretchr/testify/assert
