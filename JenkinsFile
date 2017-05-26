@@ -37,7 +37,6 @@ node {
           \$GOPATH/src/github.com/venicegeo/dg-pz-gocommon
       """
     }
-    mavenPush()
   }
 
   stage('Cleanup') {
