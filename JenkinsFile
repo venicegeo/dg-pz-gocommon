@@ -21,6 +21,7 @@ node {
         go get github.com/gin-gonic/gin
         go get github.com/stretchr/testify/assert
         go get gopkg.in/olivere/elastic.v3
+        go get github.com/Shopify/sarama
         cd \$GOPATH/src/github.com/venicegeo/dg-pz-gocommon
 
         head -30 elasticsearch/common.go
