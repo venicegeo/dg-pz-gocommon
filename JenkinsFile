@@ -24,12 +24,6 @@ node {
 
         cd \$GOPATH/src/github.com/venicegeo/dg-pz-gocommon
 
-        for i in gocommon elasticsearch kafka syslog
-        do
-          cd \$i
-          go test -v
-          cd ..
-        done
 
         cd ${root}
 
@@ -38,6 +32,13 @@ node {
       """
     }
   }
+// Took out of archive step
+        /* for i in gocommon elasticsearch kafka syslog
+        do
+          cd \$i
+          go test -v
+          cd ..
+        done */
 
   stage('Cleanup') {
     deleteDir()
