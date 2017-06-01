@@ -100,7 +100,7 @@ type SystemConfig struct {
 	// our external services
 	endpoints ServicesMap
 
-	Space string // int or stage or prod or...
+	Space        string // int or stage or prod or...
 	PiazzaSystem string // System-level username
 
 	vcapApplication *VcapApplication
@@ -160,10 +160,10 @@ func NewSystemConfig(serviceName ServiceName,
 		return nil, err
 	}
 
-/*	err = sys.runHealthChecks()
+	err = sys.runHealthChecks()
 	if err != nil {
 		return nil, err
-	} */
+	}
 
 	return sys, nil
 }
