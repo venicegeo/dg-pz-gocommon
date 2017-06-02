@@ -16,6 +16,7 @@ package piazza
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"strings"
@@ -160,7 +161,7 @@ func NewSystemConfig(serviceName ServiceName,
 		return nil, err
 	}
 
-	fmt.Println("Running health checks...")
+	log.Println("Running health checks...")
 	err = sys.runHealthChecks()
 	if err != nil {
 		return nil, err
@@ -199,7 +200,7 @@ func (sys *SystemConfig) runHealthChecks() error {
 
 		url := fmt.Sprintf("%s://%s%s", DefaultProtocol, addr, HealthcheckEndpoints[name])
 
-		fmt.Println("Checking " + url)
+		log.Println("Checking " + url)
 		resp, err := http.Get(url)
 		if err != nil {
 			return fmt.Errorf("Health check errored for service: %s at %s <%#v>", name, url, resp)
