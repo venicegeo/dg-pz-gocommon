@@ -161,7 +161,7 @@ func NewSystemConfig(serviceName ServiceName,
 		return nil, err
 	}
 
-	log.Println("Running health checks...")
+	log.Println("Running health checks on protocol", DefaultProtocol)
 	err = sys.runHealthChecks()
 	if err != nil {
 		return nil, err
